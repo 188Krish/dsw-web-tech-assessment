@@ -1,0 +1,10 @@
+body {
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    background: #ffffff;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}

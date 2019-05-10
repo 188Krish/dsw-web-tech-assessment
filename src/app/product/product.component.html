@@ -1,0 +1,44 @@
+<div class="product-container">
+  <div class="product-filter-section">
+     <div class="product-text">
+       <b>MEN'S OXFORDS & LACE-UPS</b> <br/>
+       <span class="pagination-info">Showing 1-10 of {{productData['default'].length}} items</span>
+       <span class="pagination-numbers"><i class="fa fa-caret-left" aria-hidden="true"></i> 1 <i class="fa fa-caret-right" aria-hidden="true"></i></span>
+     </div>
+     <div class="product-pagination">
+       <div class="float-right">
+       <span class="c_check">
+        <input type="checkbox" name="isToday">
+        <i></i>
+       </span> <b>NEED IT TODAY?</b>
+        <span>Available at Easton</span> <a href="#">Change Store</a>
+       </div>
+        <div class="filter_btns float-right">
+          <button class="filter">Filter</button>
+          <button class="filter">SORT BY: FEATURED</button>
+          <button class="hamb"><span class="icon-container"></span></button>
+        </div>
+     </div>
+  </div>
+  <div class="product_data" *ngFor="let shoes of productData['default']">
+    <img src="../../assets/images/products/{{shoes['id']}}.jpg" alt="">
+    <h3>{{shoes['brand'].toUpperCase()}}</h3>
+    <p>{{shoes['name'].toUpperCase()}}</p>
+    <p *ngIf="shoes['price']">${{ shoes['price']}}</p>
+    <p *ngIf="shoes['compValue']">CompValue : ${{ shoes['compValue']}}</p>
+    <span [ngClass]="shoes['rating'] && shoes['rating'] >= 1 ? 'checked' : ''" class="fa fa-star "></span>
+    <span [ngClass]="shoes['rating'] && shoes['rating'] >= 2 ? 'checked' : ''" class="fa fa-star "></span>
+    <span [ngClass]="shoes['rating'] && shoes['rating'] >= 3 ? 'checked' : ''" class="fa fa-star "></span>
+    <span [ngClass]="shoes['rating'] && shoes['rating'] >= 4 ? 'checked' : ''" class="fa fa-star"></span>
+    <span [ngClass]="shoes['rating'] && shoes['rating'] >= 5 ? 'checked' : ''" class="fa fa-star"></span>
+  </div>
+      <div class="float-right pagetop-bottom">
+        <span (click)="goTop()"
+        ><i class="fa fa-angle-up" aria-hidden="true"></i>
+         <p> TOP</p>
+        </span>
+        <hr>
+        <span><i class="fa fa-filter" aria-hidden="true"></i>
+          <p>FILTER</p></span>
+      </div>
+</div>
